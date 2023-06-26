@@ -27,10 +27,19 @@ For installation and integration please check the SDK [documentation](https://do
 
 
 ## Support and bug reporting:
+<<<<<<< HEAD
 - If you want to report a bug or you have any suggestions or a question, please create a new issue on this **[GitHub repository](https://github.com/Utiq-tech/UTIQ-iOS-SDK-Tracker/issues/new)**.
 - You can also check if there is a similar issue to yours that has been solved before **[here](https://github.com/Utiq-tech/UTIQ-Mobile-SDK-Tracker/issues)**.
 - [Send us an email](mailto:clientsdks@teavaro.com  "Email us")
 
 ## License:
 **UTIQ-iOS SDK** is released under **UTIQ Ltd. [license](https://github.com/Utiq-tech/UTIQ-iOS-SDK/blob/main/LICENSE)**.
+=======
+- If you want to report a bug or you have any suggestions or a question, please create a new issue on this **[GitHub repository](https://github.com/Utiq-tech/UTIQ-iOS-SDK/issues/new)**.
+- You can also check if there is a similar issue to yours that has been solved before **[here](https://github.com/Utiq-tech/UTIQ-iOS-SDK/issues?q=)**.
+- [Send us an email](mailto:support@utiq.com  "Email us")
+
+## License:
+**UTIQ-iOS SDK** is released under **Utiq SA/NV. [license](https://github.com/Utiq-tech/UTIQ-iOS-SDK/blob/main/LICENSE)**.
+>>>>>>> cb82d3ecdca907c359532ca0350762c9b1fc41d8
 
