@@ -23,7 +23,7 @@
 UTIQ-iOS-SDK SDK reduces the time and the overhead required to integrate with UTIQ APIs and provides direct access to UTIQ services.
 
 ## Installation and integration:
-For installation and integration please check the SDK [documentation](https://docs.utiq.com/documentation/).
+For installation and integration please check the SDK [documentation](https://docs.utiq.com/).
 
 
 ## Support and bug reporting:
