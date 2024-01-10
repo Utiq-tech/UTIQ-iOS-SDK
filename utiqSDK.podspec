@@ -1,5 +1,5 @@
 Pod::Spec.new do |spec|
-    spec.name                     = 'utiqSDK'
+    spec.name                     = 'UtiqSDK'
     spec.version                  = ENV['LIB_VERSION'] || '0.0.1' #fallback to major version
     spec.summary                  = 'UTIQSDK for iOS'
     spec.homepage                 = 'https://github.com/Utiq-tech/UTIQ-iOS-SDK'
@@ -8,7 +8,7 @@ Pod::Spec.new do |spec|
     spec.user_target_xcconfig     = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
     spec.authors                  = { 'UTIQ' => 'ahmad.mahmoud@teavaro.org' }
     spec.license                  = 'Commercial'
-    spec.vendored_frameworks      = 'utiqSDK.xcframework'
+    spec.vendored_frameworks      = 'UtiqSDK.xcframework'
     spec.libraries                = 'c++'
     spec.ios.deployment_target    = '12'
 end
