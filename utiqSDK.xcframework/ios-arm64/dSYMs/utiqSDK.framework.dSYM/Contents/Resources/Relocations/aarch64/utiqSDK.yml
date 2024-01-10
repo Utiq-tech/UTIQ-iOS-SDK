@@ -1,6 +1,6 @@
 ---
 triple:          'arm64-apple-darwin'
-binary-path:     '/Volumes/Store/Projects/Work/Teavaro/Mobile SDKs/UTIQ-Mobile-SDK/utiq/build/bin/iosArm64/releaseFramework/utiqSDK.framework/utiqSDK'
+binary-path:     '/Volumes/Store/Projects/Work/Teavaro/Mobile SDKs/Common-SDKs/utiq/build/bin/iosArm64/releaseFramework/utiqSDK.framework/utiqSDK'
 relocations:
   - { offsetInCU: 0x286, offset: 0x286, size: 0x8, addend: 0x0, symName: '_kfun:kotlinx.cinterop.CPointer#hashCode(){}kotlin.Int', symObjAddr: 0x0, symBinAddr: 0x8000, symSize: 0x88 }
   - { offsetInCU: 0x28E, offset: 0x28E, size: 0x8, addend: 0x0, symName: '_kfun:kotlinx.cinterop.CPointer#toString(){}kotlin.String', symObjAddr: 0x88, symBinAddr: 0x8088, symSize: 0x44 }

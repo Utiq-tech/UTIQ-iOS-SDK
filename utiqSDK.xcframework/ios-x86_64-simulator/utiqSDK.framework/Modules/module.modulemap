@@ -1,5 +1,5 @@
-framework module utiqSDK {
-    umbrella header "utiqSDK.h"
+framework module UtiqSDK {
+    umbrella header "UtiqSDK.h"
 
     export *
     module * { export * }
