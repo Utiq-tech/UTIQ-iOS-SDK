@@ -2,20 +2,20 @@
 import PackageDescription
 
 let package = Package(
-    name: "utiqSDK",
+    name: "UTIQ",
     platforms: [
         .iOS(.v12)
     ],
     products: [
         .library(
-            name: "utiqSDK",
-            targets: ["utiqSDK"]
+            name: "UTIQ",
+            targets: ["UTIQ"]
         ),
     ],
     targets: [
         .binaryTarget(
-            name: "utiqSDK",
-            path: "./utiqSDK.xcframework"
+            name: "UTIQ",
+            path: "./UTIQ.xcframework"
         ),
     ]
 )
