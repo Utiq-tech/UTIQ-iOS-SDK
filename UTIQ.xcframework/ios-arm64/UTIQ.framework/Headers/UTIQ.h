@@ -6,9 +6,9 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class UTIQIdcDataCompanion, UTIQIdcData, UTIQUTIQOptions, NSError, UTIQUTIQ, UTIQKotlinThrowable, UTIQKotlinArray<T>, UTIQKotlinx_serialization_coreSerializersModule, UTIQKotlinx_serialization_coreSerialKind, UTIQKotlinNothing;
+@class UTIQIdConnectDataCompanion, UTIQIdConnectData, UTIQUTIQOptions, UTIQKotlinThrowable, UTIQKotlinArray<T>, UTIQCoreBaseError, UTIQDataDomainNotFoundException, UTIQDataValueNotFoundException, UTIQIdConnectApiHostNotFoundException, UTIQIdConnectDataNotFoundException, UTIQInvalidSamlAuthenticationURLException, UTIQInvalidSamlLocationURLException, UTIQInvalidSamlSessionIdException, UTIQInvalidStubTokenException, UTIQMnoIneligibleException, UTIQMnoUrlNotFondException, UTIQUndefinedTelcoException, UTIQUnknownTelcoUseCaseException, UTIQUserOptedOutFromUtiqException, UTIQUtiqConsentNotSetException, UTIQUtiqNotStartedException, NSError, UTIQUTIQ, UTIQKotlinx_serialization_coreSerializersModule, UTIQKotlinx_serialization_coreSerialKind, UTIQKotlinNothing;
 
-@protocol UTIQKotlinx_serialization_coreKSerializer, UTIQCoreSDKMainClassUtils, UTIQKotlinx_serialization_coreEncoder, UTIQKotlinx_serialization_coreSerialDescriptor, UTIQKotlinx_serialization_coreSerializationStrategy, UTIQKotlinx_serialization_coreDecoder, UTIQKotlinx_serialization_coreDeserializationStrategy, UTIQKotlinx_serialization_coreCompositeEncoder, UTIQKotlinAnnotation, UTIQKotlinx_serialization_coreCompositeDecoder, UTIQKotlinIterator, UTIQKotlinx_serialization_coreSerializersModuleCollector, UTIQKotlinKClass, UTIQKotlinKDeclarationContainer, UTIQKotlinKAnnotatedElement, UTIQKotlinKClassifier;
+@protocol UTIQKotlinx_serialization_coreKSerializer, UTIQCoreSDKMainClassUtils, UTIQKotlinx_serialization_coreEncoder, UTIQKotlinx_serialization_coreSerialDescriptor, UTIQKotlinx_serialization_coreSerializationStrategy, UTIQKotlinx_serialization_coreDecoder, UTIQKotlinx_serialization_coreDeserializationStrategy, UTIQKotlinIterator, UTIQKotlinx_serialization_coreCompositeEncoder, UTIQKotlinAnnotation, UTIQKotlinx_serialization_coreCompositeDecoder, UTIQKotlinx_serialization_coreSerializersModuleCollector, UTIQKotlinKClass, UTIQKotlinKDeclarationContainer, UTIQKotlinKAnnotatedElement, UTIQKotlinKClassifier;
 
 NS_ASSUME_NONNULL_BEGIN
 #pragma clang diagnostic push
@@ -150,11 +150,11 @@ __attribute__((swift_name("KotlinBoolean")))
  *   kotlinx.serialization.Serializable
 */
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("IdcData")))
-@interface UTIQIdcData : UTIQBase
+__attribute__((swift_name("IdConnectData")))
+@interface UTIQIdConnectData : UTIQBase
 - (instancetype)initWithMtid:(NSString * _Nullable)mtid atid:(NSString * _Nullable)atid __attribute__((swift_name("init(mtid:atid:)"))) __attribute__((objc_designated_initializer));
-@property (class, readonly, getter=companion) UTIQIdcDataCompanion *companion __attribute__((swift_name("companion")));
-- (UTIQIdcData *)doCopyMtid:(NSString * _Nullable)mtid atid:(NSString * _Nullable)atid __attribute__((swift_name("doCopy(mtid:atid:)")));
+@property (class, readonly, getter=companion) UTIQIdConnectDataCompanion *companion __attribute__((swift_name("companion")));
+- (UTIQIdConnectData *)doCopyMtid:(NSString * _Nullable)mtid atid:(NSString * _Nullable)atid __attribute__((swift_name("doCopy(mtid:atid:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
@@ -163,12 +163,12 @@ __attribute__((swift_name("IdcData")))
 @end
 
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("IdcData.Companion")))
-@interface UTIQIdcDataCompanion : UTIQBase
+__attribute__((swift_name("IdConnectData.Companion")))
+@interface UTIQIdConnectDataCompanion : UTIQBase
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) UTIQIdcDataCompanion *shared __attribute__((swift_name("shared")));
+@property (class, readonly, getter=shared) UTIQIdConnectDataCompanion *shared __attribute__((swift_name("shared")));
 - (id<UTIQKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
 @end
 
@@ -181,6 +181,233 @@ __attribute__((swift_name("UTIQOptions")))
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
 @property (readonly) BOOL enableLogging __attribute__((swift_name("enableLogging")));
+@end
+
+__attribute__((swift_name("KotlinThrowable")))
+@interface UTIQKotlinThrowable : UTIQBase
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+- (instancetype)initWithMessage:(NSString * _Nullable)message __attribute__((swift_name("init(message:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithCause:(UTIQKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(cause:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithMessage:(NSString * _Nullable)message cause:(UTIQKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(message:cause:)"))) __attribute__((objc_designated_initializer));
+
+/**
+ * @note annotations
+ *   kotlin.experimental.ExperimentalNativeApi
+*/
+- (UTIQKotlinArray<NSString *> *)getStackTrace __attribute__((swift_name("getStackTrace()")));
+- (void)printStackTrace __attribute__((swift_name("printStackTrace()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) UTIQKotlinThrowable * _Nullable cause __attribute__((swift_name("cause")));
+@property (readonly) NSString * _Nullable message __attribute__((swift_name("message")));
+- (NSError *)asError __attribute__((swift_name("asError()")));
+@end
+
+__attribute__((swift_name("CoreBaseError")))
+@interface UTIQCoreBaseError : UTIQKotlinThrowable
+- (instancetype)initWithMessage:(NSString *)message code:(int64_t)code __attribute__((swift_name("init(message:code:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (instancetype)new __attribute__((unavailable));
+- (instancetype)initWithMessage:(NSString * _Nullable)message __attribute__((swift_name("init(message:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
+- (instancetype)initWithCause:(UTIQKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(cause:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
+- (instancetype)initWithMessage:(NSString * _Nullable)message cause:(UTIQKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(message:cause:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
+@property (readonly) int64_t code __attribute__((swift_name("code")));
+@property (readonly) NSString *message __attribute__((swift_name("message")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("DataDomainNotFoundException")))
+@interface UTIQDataDomainNotFoundException : UTIQCoreBaseError
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithMessage:(NSString *)message code:(int64_t)code __attribute__((swift_name("init(message:code:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (instancetype)dataDomainNotFoundException __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) UTIQDataDomainNotFoundException *shared __attribute__((swift_name("shared")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("DataValueNotFoundException")))
+@interface UTIQDataValueNotFoundException : UTIQCoreBaseError
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithMessage:(NSString *)message code:(int64_t)code __attribute__((swift_name("init(message:code:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (instancetype)dataValueNotFoundException __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) UTIQDataValueNotFoundException *shared __attribute__((swift_name("shared")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("IdConnectApiHostNotFoundException")))
+@interface UTIQIdConnectApiHostNotFoundException : UTIQCoreBaseError
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithMessage:(NSString *)message code:(int64_t)code __attribute__((swift_name("init(message:code:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (instancetype)idConnectApiHostNotFoundException __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) UTIQIdConnectApiHostNotFoundException *shared __attribute__((swift_name("shared")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("IdConnectDataNotFoundException")))
+@interface UTIQIdConnectDataNotFoundException : UTIQCoreBaseError
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithMessage:(NSString *)message code:(int64_t)code __attribute__((swift_name("init(message:code:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (instancetype)idConnectDataNotFoundException __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) UTIQIdConnectDataNotFoundException *shared __attribute__((swift_name("shared")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("InvalidSamlAuthenticationURLException")))
+@interface UTIQInvalidSamlAuthenticationURLException : UTIQCoreBaseError
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithMessage:(NSString *)message code:(int64_t)code __attribute__((swift_name("init(message:code:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (instancetype)invalidSamlAuthenticationURLException __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) UTIQInvalidSamlAuthenticationURLException *shared __attribute__((swift_name("shared")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("InvalidSamlLocationURLException")))
+@interface UTIQInvalidSamlLocationURLException : UTIQCoreBaseError
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithMessage:(NSString *)message code:(int64_t)code __attribute__((swift_name("init(message:code:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (instancetype)invalidSamlLocationURLException __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) UTIQInvalidSamlLocationURLException *shared __attribute__((swift_name("shared")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("InvalidSamlSessionIdException")))
+@interface UTIQInvalidSamlSessionIdException : UTIQCoreBaseError
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithMessage:(NSString *)message code:(int64_t)code __attribute__((swift_name("init(message:code:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (instancetype)invalidSamlSessionIdException __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) UTIQInvalidSamlSessionIdException *shared __attribute__((swift_name("shared")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("InvalidStubTokenException")))
+@interface UTIQInvalidStubTokenException : UTIQCoreBaseError
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithMessage:(NSString *)message code:(int64_t)code __attribute__((swift_name("init(message:code:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (instancetype)invalidStubTokenException __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) UTIQInvalidStubTokenException *shared __attribute__((swift_name("shared")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("MnoIneligibleException")))
+@interface UTIQMnoIneligibleException : UTIQCoreBaseError
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithMessage:(NSString *)message code:(int64_t)code __attribute__((swift_name("init(message:code:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (instancetype)mnoIneligibleException __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) UTIQMnoIneligibleException *shared __attribute__((swift_name("shared")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("MnoUrlNotFondException")))
+@interface UTIQMnoUrlNotFondException : UTIQCoreBaseError
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithMessage:(NSString *)message code:(int64_t)code __attribute__((swift_name("init(message:code:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (instancetype)mnoUrlNotFondException __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) UTIQMnoUrlNotFondException *shared __attribute__((swift_name("shared")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("UndefinedTelcoException")))
+@interface UTIQUndefinedTelcoException : UTIQCoreBaseError
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithMessage:(NSString *)message code:(int64_t)code __attribute__((swift_name("init(message:code:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (instancetype)undefinedTelcoException __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) UTIQUndefinedTelcoException *shared __attribute__((swift_name("shared")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("UnknownTelcoUseCaseException")))
+@interface UTIQUnknownTelcoUseCaseException : UTIQCoreBaseError
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithMessage:(NSString *)message code:(int64_t)code __attribute__((swift_name("init(message:code:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (instancetype)unknownTelcoUseCaseException __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) UTIQUnknownTelcoUseCaseException *shared __attribute__((swift_name("shared")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("UserOptedOutFromUtiqException")))
+@interface UTIQUserOptedOutFromUtiqException : UTIQCoreBaseError
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithMessage:(NSString *)message code:(int64_t)code __attribute__((swift_name("init(message:code:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (instancetype)userOptedOutFromUtiqException __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) UTIQUserOptedOutFromUtiqException *shared __attribute__((swift_name("shared")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("UtiqConsentNotSetException")))
+@interface UTIQUtiqConsentNotSetException : UTIQCoreBaseError
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithMessage:(NSString *)message code:(int64_t)code __attribute__((swift_name("init(message:code:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (instancetype)utiqConsentNotSetException __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) UTIQUtiqConsentNotSetException *shared __attribute__((swift_name("shared")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("UtiqNotStartedException")))
+@interface UTIQUtiqNotStartedException : UTIQCoreBaseError
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithMessage:(NSString *)message code:(int64_t)code __attribute__((swift_name("init(message:code:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (instancetype)utiqNotStartedException __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) UTIQUtiqNotStartedException *shared __attribute__((swift_name("shared")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
 @end
 
 __attribute__((swift_name("CoreSDKMainClassUtils")))
@@ -233,7 +460,7 @@ __attribute__((swift_name("UTIQ")))
  * @note This method converts instances of Exception to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
-- (UTIQIdcData * _Nullable)idConnectDataAndReturnError:(NSError * _Nullable * _Nullable)error __attribute__((swift_name("idConnectData()")));
+- (UTIQIdConnectData * _Nullable)idConnectDataAndReturnError:(NSError * _Nullable * _Nullable)error __attribute__((swift_name("idConnectData()")));
 - (void)initializeSdkToken:(NSString *)sdkToken __attribute__((swift_name("initialize(sdkToken:)")));
 - (void)initializeSdkToken:(NSString *)sdkToken options:(UTIQUTIQOptions *)options __attribute__((swift_name("initialize(sdkToken:options:)")));
 
@@ -262,8 +489,8 @@ __attribute__((swift_name("UTIQ")))
  * Other uncaught Kotlin exceptions are fatal.
 */
 - (BOOL)startServiceStubToken:(NSString *)stubToken error:(NSError * _Nullable * _Nullable)error __attribute__((swift_name("startService(stubToken:)")));
-- (void)startServiceDataCallback:(void (^)(UTIQIdcData *))dataCallback errorCallback:(void (^)(NSError *))errorCallback __attribute__((swift_name("startService(dataCallback:errorCallback:)")));
-- (void)startServiceStubToken:(NSString *)stubToken dataCallback:(void (^)(UTIQIdcData *))dataCallback errorCallback:(void (^)(NSError *))errorCallback __attribute__((swift_name("startService(stubToken:dataCallback:errorCallback:)")));
+- (void)startServiceDataCallback:(void (^)(UTIQIdConnectData *))dataCallback errorCallback:(void (^)(NSError *))errorCallback __attribute__((swift_name("startService(dataCallback:errorCallback:)")));
+- (void)startServiceStubToken:(NSString *)stubToken dataCallback:(void (^)(UTIQIdConnectData *))dataCallback errorCallback:(void (^)(NSError *))errorCallback __attribute__((swift_name("startService(stubToken:dataCallback:errorCallback:)")));
 @end
 
 __attribute__((swift_name("Kotlinx_serialization_coreSerializationStrategy")))
@@ -285,24 +512,16 @@ __attribute__((swift_name("Kotlinx_serialization_coreKSerializer")))
 @required
 @end
 
-__attribute__((swift_name("KotlinThrowable")))
-@interface UTIQKotlinThrowable : UTIQBase
-- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
-+ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
-- (instancetype)initWithMessage:(NSString * _Nullable)message __attribute__((swift_name("init(message:)"))) __attribute__((objc_designated_initializer));
-- (instancetype)initWithCause:(UTIQKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(cause:)"))) __attribute__((objc_designated_initializer));
-- (instancetype)initWithMessage:(NSString * _Nullable)message cause:(UTIQKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(message:cause:)"))) __attribute__((objc_designated_initializer));
-
-/**
- * @note annotations
- *   kotlin.experimental.ExperimentalNativeApi
-*/
-- (UTIQKotlinArray<NSString *> *)getStackTrace __attribute__((swift_name("getStackTrace()")));
-- (void)printStackTrace __attribute__((swift_name("printStackTrace()")));
-- (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) UTIQKotlinThrowable * _Nullable cause __attribute__((swift_name("cause")));
-@property (readonly) NSString * _Nullable message __attribute__((swift_name("message")));
-- (NSError *)asError __attribute__((swift_name("asError()")));
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("KotlinArray")))
+@interface UTIQKotlinArray<T> : UTIQBase
++ (instancetype)arrayWithSize:(int32_t)size init:(T _Nullable (^)(UTIQInt *))init __attribute__((swift_name("init(size:init:)")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (T _Nullable)getIndex:(int32_t)index __attribute__((swift_name("get(index:)")));
+- (id<UTIQKotlinIterator>)iterator __attribute__((swift_name("iterator()")));
+- (void)setIndex:(int32_t)index value:(T _Nullable)value __attribute__((swift_name("set(index:value:)")));
+@property (readonly) int32_t size __attribute__((swift_name("size")));
 @end
 
 __attribute__((swift_name("KotlinException")))
@@ -455,16 +674,11 @@ __attribute__((swift_name("Kotlinx_serialization_coreDecoder")))
 @property (readonly) UTIQKotlinx_serialization_coreSerializersModule *serializersModule __attribute__((swift_name("serializersModule")));
 @end
 
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("KotlinArray")))
-@interface UTIQKotlinArray<T> : UTIQBase
-+ (instancetype)arrayWithSize:(int32_t)size init:(T _Nullable (^)(UTIQInt *))init __attribute__((swift_name("init(size:init:)")));
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-- (T _Nullable)getIndex:(int32_t)index __attribute__((swift_name("get(index:)")));
-- (id<UTIQKotlinIterator>)iterator __attribute__((swift_name("iterator()")));
-- (void)setIndex:(int32_t)index value:(T _Nullable)value __attribute__((swift_name("set(index:value:)")));
-@property (readonly) int32_t size __attribute__((swift_name("size")));
+__attribute__((swift_name("KotlinIterator")))
+@protocol UTIQKotlinIterator
+@required
+- (BOOL)hasNext __attribute__((swift_name("hasNext()")));
+- (id _Nullable)next __attribute__((swift_name("next()")));
 @end
 
 __attribute__((swift_name("Kotlinx_serialization_coreCompositeEncoder")))
@@ -576,13 +790,6 @@ __attribute__((swift_name("Kotlinx_serialization_coreCompositeDecoder")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("KotlinNothing")))
 @interface UTIQKotlinNothing : UTIQBase
-@end
-
-__attribute__((swift_name("KotlinIterator")))
-@protocol UTIQKotlinIterator
-@required
-- (BOOL)hasNext __attribute__((swift_name("hasNext()")));
-- (id _Nullable)next __attribute__((swift_name("next()")));
 @end
 
 
