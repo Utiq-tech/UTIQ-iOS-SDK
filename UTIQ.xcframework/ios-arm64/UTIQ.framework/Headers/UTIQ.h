@@ -415,14 +415,12 @@ __attribute__((swift_name("CoreSDKMainClassUtils")))
 @required
 
 /**
- * @note This method converts instances of Exception to errors.
- * Other uncaught Kotlin exceptions are fatal.
+ * @note This method converts all Kotlin exceptions to errors.
 */
 - (id _Nullable)tryOrReThrowAndReturnError:(NSError * _Nullable * _Nullable)error function:(id _Nullable (^)(void))function __attribute__((swift_name("tryOrReThrow(function:)"))) __attribute__((swift_error(nonnull_error)));
 
 /**
- * @note This method converts instances of Exception to errors.
- * Other uncaught Kotlin exceptions are fatal.
+ * @note This method converts all Kotlin exceptions to errors.
 */
 - (BOOL)tryOrReThrowAndReturnError:(NSError * _Nullable * _Nullable)error function_:(void (^)(void))function __attribute__((swift_name("tryOrReThrow(function_:)")));
 - (void)tryOrThrowFunction:(void (^)(void))function errorCallback:(void (^)(NSError *))errorCallback __attribute__((swift_name("tryOrThrow(function:errorCallback:)")));
@@ -437,56 +435,48 @@ __attribute__((swift_name("UTIQ")))
 @property (class, readonly, getter=shared) UTIQUTIQ *shared __attribute__((swift_name("shared")));
 
 /**
- * @note This method converts instances of Exception to errors.
- * Other uncaught Kotlin exceptions are fatal.
+ * @note This method converts all Kotlin exceptions to errors.
 */
 - (BOOL)acceptConsentAndReturnError:(NSError * _Nullable * _Nullable)error __attribute__((swift_name("acceptConsent()")));
 - (void)checkMNOEligibilitySuccessCallback:(void (^)(void))successCallback errorCallback:(void (^)(NSError *))errorCallback __attribute__((swift_name("checkMNOEligibility(successCallback:errorCallback:)")));
 
 /**
- * @note This method converts instances of Exception to errors.
- * Other uncaught Kotlin exceptions are fatal.
+ * @note This method converts all Kotlin exceptions to errors.
 */
 - (BOOL)clearCookiesAndReturnError:(NSError * _Nullable * _Nullable)error __attribute__((swift_name("clearCookies()")));
 
 /**
- * @note This method converts instances of Exception to errors.
- * Other uncaught Kotlin exceptions are fatal.
+ * @note This method converts all Kotlin exceptions to errors.
 */
 - (BOOL)clearDataAndReturnError:(NSError * _Nullable * _Nullable)error __attribute__((swift_name("clearData()")));
 - (void)didInitializeWithResultSuccess:(void (^)(void))success failure:(void (^)(NSError *))failure __attribute__((swift_name("didInitializeWithResult(success:failure:)")));
 
 /**
- * @note This method converts instances of Exception to errors.
- * Other uncaught Kotlin exceptions are fatal.
+ * @note This method converts all Kotlin exceptions to errors.
 */
 - (UTIQIdConnectData * _Nullable)idConnectDataAndReturnError:(NSError * _Nullable * _Nullable)error __attribute__((swift_name("idConnectData()")));
-- (void)initializeSdkToken:(NSString *)sdkToken __attribute__((swift_name("initialize(sdkToken:)")));
-- (void)initializeSdkToken:(NSString *)sdkToken options:(UTIQUTIQOptions *)options __attribute__((swift_name("initialize(sdkToken:options:)")));
+- (void)initializeSdkToken:(NSString *)sdkToken plistFilePath:(NSString *)plistFilePath __attribute__((swift_name("initialize(sdkToken:plistFilePath:)")));
+- (void)initializeSdkToken:(NSString *)sdkToken plistFilePath:(NSString *)plistFilePath options:(UTIQUTIQOptions *)options __attribute__((swift_name("initialize(sdkToken:plistFilePath:options:)")));
 
 /**
- * @note This method converts instances of Exception to errors.
- * Other uncaught Kotlin exceptions are fatal.
+ * @note This method converts all Kotlin exceptions to errors.
 */
 - (BOOL)isConsentAcceptedAndReturnError:(NSError * _Nullable * _Nullable)error __attribute__((swift_name("isConsentAccepted()"))) __attribute__((swift_error(nonnull_error)));
 - (BOOL)isInitialized __attribute__((swift_name("isInitialized()")));
 
 /**
- * @note This method converts instances of Exception to errors.
- * Other uncaught Kotlin exceptions are fatal.
+ * @note This method converts all Kotlin exceptions to errors.
 */
 - (BOOL)rejectConsentAndReturnError:(NSError * _Nullable * _Nullable)error __attribute__((swift_name("rejectConsent()")));
 - (void)rejectConsentSuccessCallback:(void (^)(void))successCallback errorCallback:(void (^)(NSError *))errorCallback __attribute__((swift_name("rejectConsent(successCallback:errorCallback:)")));
 
 /**
- * @note This method converts instances of Exception to errors.
- * Other uncaught Kotlin exceptions are fatal.
+ * @note This method converts all Kotlin exceptions to errors.
 */
 - (BOOL)startServiceAndReturnError:(NSError * _Nullable * _Nullable)error __attribute__((swift_name("startService()")));
 
 /**
- * @note This method converts instances of Exception to errors.
- * Other uncaught Kotlin exceptions are fatal.
+ * @note This method converts all Kotlin exceptions to errors.
 */
 - (BOOL)startServiceStubToken:(NSString *)stubToken error:(NSError * _Nullable * _Nullable)error __attribute__((swift_name("startService(stubToken:)")));
 - (void)startServiceDataCallback:(void (^)(UTIQIdConnectData *))dataCallback errorCallback:(void (^)(NSError *))errorCallback __attribute__((swift_name("startService(dataCallback:errorCallback:)")));
@@ -522,15 +512,6 @@ __attribute__((swift_name("KotlinArray")))
 - (id<UTIQKotlinIterator>)iterator __attribute__((swift_name("iterator()")));
 - (void)setIndex:(int32_t)index value:(T _Nullable)value __attribute__((swift_name("set(index:value:)")));
 @property (readonly) int32_t size __attribute__((swift_name("size")));
-@end
-
-__attribute__((swift_name("KotlinException")))
-@interface UTIQKotlinException : UTIQKotlinThrowable
-- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
-+ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
-- (instancetype)initWithMessage:(NSString * _Nullable)message __attribute__((swift_name("init(message:)"))) __attribute__((objc_designated_initializer));
-- (instancetype)initWithCause:(UTIQKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(cause:)"))) __attribute__((objc_designated_initializer));
-- (instancetype)initWithMessage:(NSString * _Nullable)message cause:(UTIQKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(message:cause:)"))) __attribute__((objc_designated_initializer));
 @end
 
 __attribute__((swift_name("Kotlinx_serialization_coreEncoder")))
