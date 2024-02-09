@@ -6,7 +6,7 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class UTIQIdConnectDataCompanion, UTIQIdConnectData, UTIQUTIQOptions, UTIQKotlinThrowable, UTIQKotlinArray<T>, UTIQCoreBaseError, UTIQDataDomainNotFoundException, UTIQDataValueNotFoundException, UTIQIdConnectApiHostNotFoundException, UTIQIdConnectDataNotFoundException, UTIQInvalidSamlAuthenticationURLException, UTIQInvalidSamlLocationURLException, UTIQInvalidSamlSessionIdException, UTIQInvalidStubTokenException, UTIQMnoIneligibleException, UTIQMnoUrlNotFondException, UTIQUndefinedTelcoException, UTIQUnknownTelcoUseCaseException, UTIQUserOptedOutFromUtiqException, UTIQUtiqConsentNotSetException, UTIQUtiqNotStartedException, NSError, UTIQUTIQ, UTIQKotlinx_serialization_coreSerializersModule, UTIQKotlinx_serialization_coreSerialKind, UTIQKotlinNothing;
+@class UTIQIdConnectDataCompanion, UTIQIdConnectData, UTIQUTIQOptions, UTIQKotlinThrowable, UTIQKotlinArray<T>, UTIQCoreBaseError, UTIQDataDomainNotFoundException, UTIQDataValueNotFoundException, UTIQIdConnectApiHostNotFoundException, UTIQIdConnectDataNotFoundException, UTIQInvalidSamlAuthenticationURLException, UTIQInvalidSamlLocationURLException, UTIQInvalidSamlSessionIdException, UTIQInvalidStubTokenException, UTIQMnoIneligibleException, UTIQMnoUrlNotFoundException, UTIQUndefinedTelcoException, UTIQUnknownTelcoUseCaseException, UTIQUserOptedOutFromUtiqException, UTIQUtiqConsentNotSetException, UTIQUtiqNotStartedException, NSError, UTIQUTIQ, UTIQKotlinx_serialization_coreSerializersModule, UTIQKotlinx_serialization_coreSerialKind, UTIQKotlinNothing;
 
 @protocol UTIQKotlinx_serialization_coreKSerializer, UTIQCoreSDKMainClassUtils, UTIQKotlinx_serialization_coreEncoder, UTIQKotlinx_serialization_coreSerialDescriptor, UTIQKotlinx_serialization_coreSerializationStrategy, UTIQKotlinx_serialization_coreDecoder, UTIQKotlinx_serialization_coreDeserializationStrategy, UTIQKotlinIterator, UTIQKotlinx_serialization_coreCompositeEncoder, UTIQKotlinAnnotation, UTIQKotlinx_serialization_coreCompositeDecoder, UTIQKotlinx_serialization_coreSerializersModuleCollector, UTIQKotlinKClass, UTIQKotlinKDeclarationContainer, UTIQKotlinKAnnotatedElement, UTIQKotlinKClassifier;
 
@@ -333,13 +333,13 @@ __attribute__((swift_name("MnoIneligibleException")))
 @end
 
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("MnoUrlNotFondException")))
-@interface UTIQMnoUrlNotFondException : UTIQCoreBaseError
+__attribute__((swift_name("MnoUrlNotFoundException")))
+@interface UTIQMnoUrlNotFoundException : UTIQCoreBaseError
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 - (instancetype)initWithMessage:(NSString *)message code:(int64_t)code __attribute__((swift_name("init(message:code:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-+ (instancetype)mnoUrlNotFondException __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) UTIQMnoUrlNotFondException *shared __attribute__((swift_name("shared")));
++ (instancetype)mnoUrlNotFoundException __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) UTIQMnoUrlNotFoundException *shared __attribute__((swift_name("shared")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
