@@ -449,6 +449,7 @@ __attribute__((swift_name("UTIQ")))
  * @note This method converts all Kotlin exceptions to errors.
 */
 - (BOOL)clearDataAndReturnError:(NSError * _Nullable * _Nullable)error __attribute__((swift_name("clearData()")));
+- (NSString *)consentHubUrl __attribute__((swift_name("consentHubUrl()")));
 - (void)didInitializeWithResultSuccess:(void (^)(void))success failure:(void (^)(NSError *))failure __attribute__((swift_name("didInitializeWithResult(success:failure:)")));
 
 /**
