@@ -458,6 +458,7 @@ __attribute__((swift_name("UTIQ")))
 - (UTIQIdConnectData * _Nullable)idConnectDataAndReturnError:(NSError * _Nullable * _Nullable)error __attribute__((swift_name("idConnectData()")));
 - (void)initializeSdkToken:(NSString *)sdkToken plistFilePath:(NSString *)plistFilePath __attribute__((swift_name("initialize(sdkToken:plistFilePath:)")));
 - (void)initializeSdkToken:(NSString *)sdkToken plistFilePath:(NSString *)plistFilePath options:(UTIQUTIQOptions *)options __attribute__((swift_name("initialize(sdkToken:plistFilePath:options:)")));
+- (void)initializeSdkToken:(NSString *)sdkToken plistFilePath:(NSString *)plistFilePath options:(UTIQUTIQOptions *)options success:(void (^)(void))success failure:(void (^)(NSError *))failure __attribute__((swift_name("initialize(sdkToken:plistFilePath:options:success:failure:)")));
 
 /**
  * @note This method converts all Kotlin exceptions to errors.
