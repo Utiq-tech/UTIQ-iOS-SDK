@@ -9,7 +9,6 @@ Pod::Spec.new do |spec|
     spec.authors                  = { 'UTIQ' => 'ahmad.mahmoud@teavaro.org' }
     spec.license                  = 'Commercial'
     spec.vendored_frameworks      = 'UTIQ.xcframework'
-    spec.static_framework = true
     spec.libraries                = 'c++'
     spec.ios.deployment_target    = '12'
 end
