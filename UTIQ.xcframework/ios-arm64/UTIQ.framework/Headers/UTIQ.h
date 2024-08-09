@@ -437,6 +437,7 @@ __attribute__((swift_name("UTIQ")))
 */
 - (BOOL)acceptConsentAndReturnError:(NSError * _Nullable * _Nullable)error __attribute__((swift_name("acceptConsent()")));
 - (void)checkMNOEligibilitySuccessCallback:(void (^)(void))successCallback errorCallback:(void (^)(NSError *))errorCallback __attribute__((swift_name("checkMNOEligibility(successCallback:errorCallback:)")));
+- (void)checkMNOEligibilityStubToken:(NSString *)stubToken successCallback:(void (^)(void))successCallback errorCallback:(void (^)(NSError *))errorCallback __attribute__((swift_name("checkMNOEligibility(stubToken:successCallback:errorCallback:)")));
 
 /**
  * @note This method converts all Kotlin exceptions to errors.
