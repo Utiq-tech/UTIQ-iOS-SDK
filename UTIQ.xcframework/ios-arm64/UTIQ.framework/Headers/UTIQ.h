@@ -152,13 +152,14 @@ __attribute__((swift_name("KotlinBoolean")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("IdConnectData")))
 @interface UtiqIdConnectData : UtiqBase
-- (instancetype)initWithMtid:(NSString * _Nullable)mtid atid:(NSString * _Nullable)atid __attribute__((swift_name("init(mtid:atid:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithMtid:(NSString * _Nullable)mtid atid:(NSString * _Nullable)atid attrid:(NSString * _Nullable)attrid __attribute__((swift_name("init(mtid:atid:attrid:)"))) __attribute__((objc_designated_initializer));
 @property (class, readonly, getter=companion) UtiqIdConnectDataCompanion *companion __attribute__((swift_name("companion")));
-- (UtiqIdConnectData *)doCopyMtid:(NSString * _Nullable)mtid atid:(NSString * _Nullable)atid __attribute__((swift_name("doCopy(mtid:atid:)")));
+- (UtiqIdConnectData *)doCopyMtid:(NSString * _Nullable)mtid atid:(NSString * _Nullable)atid attrid:(NSString * _Nullable)attrid __attribute__((swift_name("doCopy(mtid:atid:attrid:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
 @property (readonly) NSString * _Nullable atid __attribute__((swift_name("atid")));
+@property (readonly) NSString * _Nullable attrid __attribute__((swift_name("attrid")));
 @property (readonly) NSString * _Nullable mtid __attribute__((swift_name("mtid")));
 @end
 
@@ -463,16 +464,6 @@ __attribute__((swift_name("Utiq")))
 - (BOOL)clearDataAndReturnError:(NSError * _Nullable * _Nullable)error __attribute__((swift_name("clearData()")));
 - (NSString *)consentHubUrl __attribute__((swift_name("consentHubUrl()")));
 - (void)didInitializeWithResultSuccess:(void (^)(void))success failure:(void (^)(NSError *))failure __attribute__((swift_name("didInitializeWithResult(success:failure:)")));
-
-/**
- * @note This method converts all Kotlin exceptions to errors.
-*/
-- (BOOL)fetchIdConnectDataAndReturnError:(NSError * _Nullable * _Nullable)error __attribute__((swift_name("fetchIdConnectData()")));
-
-/**
- * @note This method converts all Kotlin exceptions to errors.
-*/
-- (BOOL)fetchIdConnectDataStubToken:(NSString *)stubToken error:(NSError * _Nullable * _Nullable)error __attribute__((swift_name("fetchIdConnectData(stubToken:)")));
 - (void)fetchIdConnectDataDataCallback:(void (^)(UtiqIdConnectData *))dataCallback errorCallback:(void (^)(NSError *))errorCallback __attribute__((swift_name("fetchIdConnectData(dataCallback:errorCallback:)")));
 - (void)fetchIdConnectDataStubToken:(NSString *)stubToken dataCallback:(void (^)(UtiqIdConnectData *))dataCallback errorCallback:(void (^)(NSError *))errorCallback __attribute__((swift_name("fetchIdConnectData(stubToken:dataCallback:errorCallback:)")));
 - (void)initializeSdkToken:(NSString *)sdkToken __attribute__((swift_name("initialize(sdkToken:)")));
