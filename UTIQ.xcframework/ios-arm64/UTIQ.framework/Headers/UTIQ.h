@@ -6,7 +6,7 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class UtiqIdConnectDataCompanion, UtiqIdConnectData, UtiqUtiqOptions, UtiqKotlinThrowable, UtiqKotlinArray<T>, UtiqCoreBaseError, UtiqDataDomainNotFoundException, UtiqDataValueNotFoundException, UtiqEmptySetCookieHeader, UtiqIdConnectApiHostNotFoundException, UtiqIdConnectDataNotFoundException, UtiqInvalidSamlAuthenticationURLException, UtiqInvalidSamlLocationURLException, UtiqInvalidSamlSessionIdException, UtiqInvalidStubTokenException, UtiqMnoIneligibleException, UtiqMnoUrlNotFoundException, UtiqUndefinedTelcoException, UtiqUnknownTelcoUseCaseException, UtiqUserOptedOutFromUtiqException, UtiqUtiqConsentNotSetException, UtiqUtiqNotStartedException, NSError, UtiqUtiq, UtiqKotlinx_serialization_coreSerializersModule, UtiqKotlinx_serialization_coreSerialKind, UtiqKotlinNothing;
+@class UtiqIdConnectDataCompanion, UtiqIdConnectData, UtiqUtiqOptions, UtiqKotlinThrowable, UtiqKotlinArray<T>, UtiqCoreBaseError, UtiqDataDomainNotFoundException, UtiqDataValueNotFoundException, UtiqEmptySetCookieHeader, UtiqIdConnectApiHostNotFoundException, UtiqIdConnectDataNotFoundException, UtiqInvalidSamlAuthenticationURLException, UtiqInvalidSamlLocationURLException, UtiqInvalidSamlSessionIdException, UtiqInvalidStubTokenException, UtiqMnoIneligibleException, UtiqMnoUrlNotFoundException, UtiqUnKnowUserStatusException, UtiqUndefinedTelcoException, UtiqUnknownTelcoUseCaseException, UtiqUserFrozenUtiqForOneYearException, UtiqUserOptedOutFromUtiqException, UtiqUtiqConsentNotSetException, UtiqUtiqNotStartedException, NSError, UtiqUtiq, UtiqKotlinx_serialization_coreSerializersModule, UtiqKotlinx_serialization_coreSerialKind, UtiqKotlinNothing;
 
 @protocol UtiqKotlinx_serialization_coreKSerializer, UtiqCoreSDKMainClassUtils, UtiqKotlinx_serialization_coreEncoder, UtiqKotlinx_serialization_coreSerialDescriptor, UtiqKotlinx_serialization_coreSerializationStrategy, UtiqKotlinx_serialization_coreDecoder, UtiqKotlinx_serialization_coreDeserializationStrategy, UtiqKotlinIterator, UtiqKotlinx_serialization_coreCompositeEncoder, UtiqKotlinAnnotation, UtiqKotlinx_serialization_coreCompositeDecoder, UtiqKotlinx_serialization_coreSerializersModuleCollector, UtiqKotlinKClass, UtiqKotlinKDeclarationContainer, UtiqKotlinKAnnotatedElement, UtiqKotlinKClassifier;
 
@@ -358,6 +358,19 @@ __attribute__((swift_name("MnoUrlNotFoundException")))
 @end
 
 __attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("UnKnowUserStatusException")))
+@interface UtiqUnKnowUserStatusException : UtiqCoreBaseError
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithMessage:(NSString *)message code:(int64_t)code __attribute__((swift_name("init(message:code:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (instancetype)unKnowUserStatusException __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) UtiqUnKnowUserStatusException *shared __attribute__((swift_name("shared")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("UndefinedTelcoException")))
 @interface UtiqUndefinedTelcoException : UtiqCoreBaseError
 + (instancetype)alloc __attribute__((unavailable));
@@ -378,6 +391,19 @@ __attribute__((swift_name("UnknownTelcoUseCaseException")))
 - (instancetype)initWithMessage:(NSString *)message code:(int64_t)code __attribute__((swift_name("init(message:code:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 + (instancetype)unknownTelcoUseCaseException __attribute__((swift_name("init()")));
 @property (class, readonly, getter=shared) UtiqUnknownTelcoUseCaseException *shared __attribute__((swift_name("shared")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("UserFrozenUtiqForOneYearException")))
+@interface UtiqUserFrozenUtiqForOneYearException : UtiqCoreBaseError
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithMessage:(NSString *)message code:(int64_t)code __attribute__((swift_name("init(message:code:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (instancetype)userFrozenUtiqForOneYearException __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) UtiqUserFrozenUtiqForOneYearException *shared __attribute__((swift_name("shared")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
@@ -463,9 +489,15 @@ __attribute__((swift_name("Utiq")))
 */
 - (BOOL)clearDataAndReturnError:(NSError * _Nullable * _Nullable)error __attribute__((swift_name("clearData()")));
 - (NSString *)consentHubUrl __attribute__((swift_name("consentHubUrl()")));
+- (NSString *)consentHubUrlStubToken:(NSString *)stubToken __attribute__((swift_name("consentHubUrl(stubToken:)")));
 - (void)didInitializeWithResultSuccess:(void (^)(void))success failure:(void (^)(NSError *))failure __attribute__((swift_name("didInitializeWithResult(success:failure:)")));
 - (void)fetchIdConnectDataDataCallback:(void (^)(UtiqIdConnectData *))dataCallback errorCallback:(void (^)(NSError *))errorCallback __attribute__((swift_name("fetchIdConnectData(dataCallback:errorCallback:)")));
 - (void)fetchIdConnectDataStubToken:(NSString *)stubToken dataCallback:(void (^)(UtiqIdConnectData *))dataCallback errorCallback:(void (^)(NSError *))errorCallback __attribute__((swift_name("fetchIdConnectData(stubToken:dataCallback:errorCallback:)")));
+
+/**
+ * @note This method converts all Kotlin exceptions to errors.
+*/
+- (BOOL)hasConsentAndReturnError:(NSError * _Nullable * _Nullable)error __attribute__((swift_name("hasConsent()"))) __attribute__((swift_error(nonnull_error)));
 - (void)initializeSdkToken:(NSString *)sdkToken __attribute__((swift_name("initialize(sdkToken:)")));
 - (void)initializeSdkToken:(NSString *)sdkToken options:(UtiqUtiqOptions *)options __attribute__((swift_name("initialize(sdkToken:options:)")));
 - (void)initializeSdkToken:(NSString *)sdkToken options:(UtiqUtiqOptions *)options success:(void (^)(void))success failure:(void (^)(NSError *))failure __attribute__((swift_name("initialize(sdkToken:options:success:failure:)")));
@@ -474,6 +506,7 @@ __attribute__((swift_name("Utiq")))
  * @note This method converts all Kotlin exceptions to errors.
 */
 - (BOOL)isConsentAcceptedAndReturnError:(NSError * _Nullable * _Nullable)error __attribute__((swift_name("isConsentAccepted()"))) __attribute__((swift_error(nonnull_error)));
+- (BOOL)isIdConnectDataFetched __attribute__((swift_name("isIdConnectDataFetched()")));
 - (BOOL)isInitialized __attribute__((swift_name("isInitialized()")));
 
 /**
