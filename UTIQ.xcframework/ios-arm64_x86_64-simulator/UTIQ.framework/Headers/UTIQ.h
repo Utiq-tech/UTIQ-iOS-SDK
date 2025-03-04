@@ -6,7 +6,7 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class NSError, UtiqCoreBaseError, UtiqDataDomainNotFoundException, UtiqDataValueNotFoundException, UtiqEmptySetCookieHeader, UtiqIdConnectApiHostNotFoundException, UtiqIdConnectData, UtiqIdConnectDataCompanion, UtiqIdConnectDataNotFoundException, UtiqInvalidSamlAuthenticationURLException, UtiqInvalidSamlLocationURLException, UtiqInvalidSamlSessionIdException, UtiqInvalidStubTokenException, UtiqKotlinArray<T>, UtiqKotlinNothing, UtiqKotlinThrowable, UtiqKotlinx_serialization_coreSerialKind, UtiqKotlinx_serialization_coreSerializersModule, UtiqMnoIneligibleException, UtiqMnoUrlNotFoundException, UtiqUnKnowUserStatusException, UtiqUndefinedTelcoException, UtiqUnknownTelcoUseCaseException, UtiqUserFrozenUtiqForOneYearException, UtiqUserOptedOutFromUtiqException, UtiqUtiq, UtiqUtiqConsentNotSetException, UtiqUtiqNotStartedException, UtiqUtiqOptions;
+@class NSError, UtiqCoreBaseError, UtiqDataDomainNotFoundException, UtiqDataValueNotFoundException, UtiqEmptySetCookieHeader, UtiqIdConnectApiHostNotFoundException, UtiqIdConnectData, UtiqIdConnectDataCompanion, UtiqIdConnectDataNotFoundException, UtiqInvalidConsentVersionsException, UtiqInvalidSamlAuthenticationURLException, UtiqInvalidSamlLocationURLException, UtiqInvalidSamlSessionIdException, UtiqInvalidStubTokenException, UtiqKotlinArray<T>, UtiqKotlinNothing, UtiqKotlinThrowable, UtiqKotlinx_serialization_coreSerialKind, UtiqKotlinx_serialization_coreSerializersModule, UtiqMnoIneligibleException, UtiqMnoUrlNotFoundException, UtiqTemplateDataUrlNotFoundException, UtiqUnKnowUserStatusException, UtiqUndefinedTelcoException, UtiqUnknownTelcoUseCaseException, UtiqUserFrozenUtiqForOneYearException, UtiqUserOptedOutFromUtiqException, UtiqUtiq, UtiqUtiqConsentNotSetException, UtiqUtiqNotStartedException, UtiqUtiqOptions;
 
 @protocol UtiqCoreSDKMainClassUtils, UtiqKotlinAnnotation, UtiqKotlinIterator, UtiqKotlinKAnnotatedElement, UtiqKotlinKClass, UtiqKotlinKClassifier, UtiqKotlinKDeclarationContainer, UtiqKotlinx_serialization_coreCompositeDecoder, UtiqKotlinx_serialization_coreCompositeEncoder, UtiqKotlinx_serialization_coreDecoder, UtiqKotlinx_serialization_coreDeserializationStrategy, UtiqKotlinx_serialization_coreEncoder, UtiqKotlinx_serialization_coreKSerializer, UtiqKotlinx_serialization_coreSerialDescriptor, UtiqKotlinx_serialization_coreSerializationStrategy, UtiqKotlinx_serialization_coreSerializersModuleCollector;
 
@@ -280,6 +280,19 @@ __attribute__((swift_name("IdConnectDataNotFoundException")))
 @end
 
 __attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("InvalidConsentVersionsException")))
+@interface UtiqInvalidConsentVersionsException : UtiqCoreBaseError
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithMessage:(NSString *)message code:(int64_t)code __attribute__((swift_name("init(message:code:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (instancetype)invalidConsentVersionsException __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) UtiqInvalidConsentVersionsException *shared __attribute__((swift_name("shared")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("InvalidSamlAuthenticationURLException")))
 @interface UtiqInvalidSamlAuthenticationURLException : UtiqCoreBaseError
 + (instancetype)alloc __attribute__((unavailable));
@@ -352,6 +365,19 @@ __attribute__((swift_name("MnoUrlNotFoundException")))
 - (instancetype)initWithMessage:(NSString *)message code:(int64_t)code __attribute__((swift_name("init(message:code:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 + (instancetype)mnoUrlNotFoundException __attribute__((swift_name("init()")));
 @property (class, readonly, getter=shared) UtiqMnoUrlNotFoundException *shared __attribute__((swift_name("shared")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("TemplateDataUrlNotFoundException")))
+@interface UtiqTemplateDataUrlNotFoundException : UtiqCoreBaseError
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithMessage:(NSString *)message code:(int64_t)code __attribute__((swift_name("init(message:code:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (instancetype)templateDataUrlNotFoundException __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) UtiqTemplateDataUrlNotFoundException *shared __attribute__((swift_name("shared")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
