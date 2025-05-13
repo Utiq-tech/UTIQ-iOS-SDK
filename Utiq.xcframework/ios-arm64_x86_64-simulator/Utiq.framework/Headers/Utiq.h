@@ -6,7 +6,7 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class NSError, UtiqCoreBaseError, UtiqDataDomainNotFoundException, UtiqDataValueNotFoundException, UtiqEmptySetCookieHeaderException, UtiqIdConnectData, UtiqIdConnectDataNotFoundException, UtiqInvalidConsentVersionsException, UtiqInvalidSamlAuthenticationURLException, UtiqInvalidSamlLocationURLException, UtiqInvalidSamlSessionIdException, UtiqInvalidStubTokenException, UtiqKotlinArray<T>, UtiqKotlinThrowable, UtiqMnoIneligibleException, UtiqMnoUrlNotFoundException, UtiqNetworkIdentificationException, UtiqTemplateDataUrlNotFoundException, UtiqUnKnowUserStatusException, UtiqUndefinedTelcoException, UtiqUnknownTelcoUseCaseException, UtiqUserOptedOutFromUtiqException, UtiqUtiq, UtiqUtiqConsentExpiredException, UtiqUtiqConsentNotSetException, UtiqUtiqOptions;
+@class NSError, UtiqCoreBaseError, UtiqCoreEnvironmentVariables, UtiqDataDomainNotFoundException, UtiqDataValueNotFoundException, UtiqEmptySetCookieHeaderException, UtiqIdConnectData, UtiqIdConnectDataNotFoundException, UtiqInvalidConsentVersionsException, UtiqInvalidSamlAuthenticationURLException, UtiqInvalidSamlLocationURLException, UtiqInvalidSamlSessionIdException, UtiqInvalidStubTokenException, UtiqKotlinArray<T>, UtiqKotlinThrowable, UtiqMnoIneligibleException, UtiqMnoUrlNotFoundException, UtiqNetworkIdentificationException, UtiqTemplateDataUrlNotFoundException, UtiqUnKnowUserStatusException, UtiqUnKnownConnectionTypeException, UtiqUndefinedTelcoException, UtiqUnknownTelcoUseCaseException, UtiqUserOptedOutFromUtiqException, UtiqUtiq, UtiqUtiqConsentExpiredException, UtiqUtiqConsentNotSetException, UtiqUtiqOptions;
 
 @protocol UtiqCoreSDKMainClassUtils, UtiqKotlinIterator;
 
@@ -155,6 +155,24 @@ __attribute__((swift_name("IdConnectData")))
 @property (readonly) NSString * _Nullable atid __attribute__((swift_name("atid")));
 @property (readonly) NSString * _Nullable attrid __attribute__((swift_name("attrid")));
 @property (readonly) NSString * _Nullable mtid __attribute__((swift_name("mtid")));
+@end
+
+__attribute__((swift_name("CoreEnvironmentVariables")))
+@interface UtiqCoreEnvironmentVariables : UtiqBase
+- (instancetype)initWithSdkName:(NSString *)sdkName sdkVersion:(NSString *)sdkVersion gitCommitHash:(NSString *)gitCommitHash companyName:(NSString *)companyName keysToRedactWhenLogging:(NSSet<NSString *> *)keysToRedactWhenLogging __attribute__((swift_name("init(sdkName:sdkVersion:gitCommitHash:companyName:keysToRedactWhenLogging:)"))) __attribute__((objc_designated_initializer));
+@property (readonly) NSString *companyName __attribute__((swift_name("companyName")));
+@property (readonly) NSString *gitCommitHash __attribute__((swift_name("gitCommitHash")));
+@property (readonly) NSSet<NSString *> *keysToRedactWhenLogging __attribute__((swift_name("keysToRedactWhenLogging")));
+@property (readonly) NSString *sdkName __attribute__((swift_name("sdkName")));
+@property (readonly) NSString *sdkVersion __attribute__((swift_name("sdkVersion")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("UtiqEnvironmentVariables")))
+@interface UtiqUtiqEnvironmentVariables : UtiqCoreEnvironmentVariables
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+- (instancetype)initWithSdkName:(NSString *)sdkName sdkVersion:(NSString *)sdkVersion gitCommitHash:(NSString *)gitCommitHash companyName:(NSString *)companyName keysToRedactWhenLogging:(NSSet<NSString *> *)keysToRedactWhenLogging __attribute__((swift_name("init(sdkName:sdkVersion:gitCommitHash:companyName:keysToRedactWhenLogging:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -375,6 +393,19 @@ __attribute__((swift_name("UnKnowUserStatusException")))
 - (instancetype)initWithMessage:(NSString *)message code:(int64_t)code __attribute__((swift_name("init(message:code:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 + (instancetype)unKnowUserStatusException __attribute__((swift_name("init()")));
 @property (class, readonly, getter=shared) UtiqUnKnowUserStatusException *shared __attribute__((swift_name("shared")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("UnKnownConnectionTypeException")))
+@interface UtiqUnKnownConnectionTypeException : UtiqCoreBaseError
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithMessage:(NSString *)message code:(int64_t)code __attribute__((swift_name("init(message:code:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (instancetype)unKnownConnectionTypeException __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) UtiqUnKnownConnectionTypeException *shared __attribute__((swift_name("shared")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
